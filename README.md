@@ -12,10 +12,10 @@ As you can clearly see, I am not a UX expert in any way.  I welcome any help wit
 ## Requirements
 
 1. 1Password Comamnd line installed to /usr/local/bin/op
-2. Iterm2 Co-Process Setup with the following:
+2. OP has been setup to use "my" subdomain
+3. Iterm2 Co-Process Setup with the following:
   1. /Applications/dpaf.app/Contents/MacOS/dpaf
 
-3. Enjoy!
 
 ## Usage
 
