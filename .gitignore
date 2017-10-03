@@ -1,0 +1,8 @@
+*.json
+__pycache__
+build
+.DS_Store
+tmp
+*.app
+dist/dpaf/*
+*.spec

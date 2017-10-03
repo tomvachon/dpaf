@@ -1,0 +1,44 @@
+ScreenManager:
+    LoginScreen:
+    SearchScreen:
+    SelectScreen:
+
+<LoginScreen>:
+    name: 'login'
+    GridLayout:
+        cols: 2
+        Label: 
+            text: 'Master Password'
+            text_size: self.size
+            halign: 'center'
+            valign: 'middle'
+        TextInput:
+            id: master_password
+            multiline: False
+            password: True
+            on_text_validate: root.test_login(master_password.text)
+        Label: 
+            text: ''
+
+<SearchScreen>:
+    name: "search"
+    GridLayout:
+        cols: 2
+        Label:
+            text: 'Search String'
+            text_size: self.size
+            halign: 'center'
+            valign: 'middle'
+        TextInput:
+            id: filter_value
+            multiline: False
+            on_text_validate: root.op_search(filter_value.text)
+        Label: 
+            text: ''
+
+<SelectScreen>:
+    on_enter: root.user_select()
+    name: "select"
+    GridLayout:
+        id: grid
+        cols: 1   
