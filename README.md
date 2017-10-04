@@ -1,6 +1,13 @@
 # dpaf
 The Dangerous Password AutoFiller! - A 1Password OP Derivative
 
+### Notice
+
+You are going to enter your master password into this tool to use it. The tool
+does not store, save, or otherwise persit your password but I encorage you to review the source code.
+
+This is NOT an offical 1Password client or otherise supported by Agilebits.
+
 ## WARNING
 
 This is still a work in progress and very much alpha in its look and feel.  The functionality is however, complete and usable.
