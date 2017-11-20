@@ -8,6 +8,16 @@ ScreenManager:
     GridLayout:
         cols: 2
         Label: 
+            text: '1Password Subdomain'
+            text_size: self.size
+            halign: 'center'
+            valign: 'middle'
+        TextInput:
+            id: op_subdomain
+            multiline: False
+            password: False
+            default: 'vachon'
+        Label: 
             text: 'Master Password'
             text_size: self.size
             halign: 'center'
@@ -16,9 +26,7 @@ ScreenManager:
             id: master_password
             multiline: False
             password: True
-            on_text_validate: root.test_login(master_password.text)
-        Label: 
-            text: ''
+            on_text_validate: root.test_login(master_password.text,op_subdomain.text)
 
 <SearchScreen>:
     name: "search"

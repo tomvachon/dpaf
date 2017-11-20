@@ -46,7 +46,7 @@ CONFIDENCE_THRESHOLD = 45
 
 class LoginScreen(Screen):
 
-    def test_login(self, master_password):
+    def test_login(self, master_password, op_subdomain):
         #Window.size = (150, 75)
         self.token = ObjectProperty()
 
@@ -54,7 +54,7 @@ class LoginScreen(Screen):
 
             Logger.debug('Checking for OS Environ Value')
 
-            p = subprocess.Popen([OP_COMMAND, "signin", "my", "--output=raw"], 
+            p = subprocess.Popen([OP_COMMAND, "signin", op_subdomain, "--output=raw"], 
                                 stdin=subprocess.PIPE, stdout=subprocess.PIPE)
             token_raw, errs = p.communicate(str.encode(master_password))
             self.token = token_raw.decode("utf-8").rstrip()

@@ -1,6 +1,8 @@
 # dpaf
 The Dangerous Password AutoFiller! - A 1Password OP Derivative
 
+[![CircleCI](https://circleci.com/gh/tomvachon/dpaf.svg?style=svg)](https://circleci.com/gh/tomvachon/dpaf)
+
 ### Notice
 
 You are going to enter your master password into this tool to use it. The tool
