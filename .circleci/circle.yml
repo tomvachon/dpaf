@@ -1,0 +1,26 @@
+version: 2
+
+jobs:
+    build:
+      macos: 
+        xcode: 7.0
+      steps:
+        - run:
+            name: Update Path
+            command: echo 'export PATH=/usr/local/bin:$PATH:/Users/distiller/Library/Python/2.7/bin' >> $BASH_ENV
+        - run:
+            name: Install VirtualEnv
+            command: pip install --user --ignore-installed --upgrade virtualenv
+        - run:
+            name: Update Brew Repository
+            command: cd "$(brew --repository)" && git fetch && git reset --hard origin/master
+        - run:
+            name: Update Brew Packages
+            command: brew update
+        - run:
+            name: Install System Dependancies
+            command: make install-deps
+        - run: 
+            name: Set Python 3.6.2 active
+            command: pyenv local 3.6.2
+      
