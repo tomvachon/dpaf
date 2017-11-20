@@ -1,36 +1,23 @@
-import unittest
+from kivy.tests.common import GraphicUnitTest
 
-import os
-import sys
-import time
-import os.path as op
-from functools import partial
-from kivy.clock import Clock
+class MyTestCase(GraphicUnitTest):
 
+    def test_dpaf(self):
+        # non-integrated approach
+        from kivy.app import runTouchApp
+        from kivy.uix.button import Button
 
-main_path = op.dirname(op.dirname(op.abspath(__file__)))
-sys.path.append(main_path)
+        button = Button()
+        runTouchApp(button)
 
-from main import OpCli
+        # get your Window instance safely
+        from kivy.base import EventLoop
+        EventLoop.ensure_window()
+        window = EventLoop.window
 
-class TestMain(unittest.TestCase):
-    
-    # sleep function that catches ``dt`` from Clock
-    def pause(*args):
-        time.sleep(0.000001)
-
-    # main test function
-    def run_test(self, app, *args):
-        Clock.schedule_interval(self.pause, 0.000001)
-
-        # Do something
-
-        # Comment out if you are editing the test, it'll leave the
-        # Window opened.
-        app.stop()
-    
-    def test_example(self):
-        app = OpCli()
-        p = partial(self.run_test, app)
-        Clock.schedule_once(p, 0.000001)
-        app.run()
+        # your asserts
+        self.assertEqual(window.children[0], button)
+        self.assertEqual(
+            window.children[0].height,
+            window.height
+        )
