@@ -16,6 +16,7 @@ jobs:
         - run:
             name: Update Brew Packages
             command: brew update
+        - checkout
         - run:
             name: Install System Dependancies
             command: make install-deps
