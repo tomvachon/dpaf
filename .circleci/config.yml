@@ -1,9 +1,8 @@
 version: 2
-
 jobs:
     build:
       macos: 
-        xcode: 7.0
+        xcode: "7.0"
       steps:
         - run:
             name: Update Path
